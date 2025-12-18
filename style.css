@@ -1,0 +1,243 @@
+/* 
+  Lugbe Youth Empowerment Association (LYEA)
+  Main Stylesheet
+*/
+
+/* Variables: Defining our color palette */
+:root {
+  --color-primary: #1f7a4d; /* Deep Green */
+  --color-secondary: #f4b400; /* Warm Gold */
+  --color-bg: #f9f9f9; /* Soft White */
+  --color-text: #333333; /* Dark Gray */
+  --color-white: #ffffff;
+}
+
+/* Global Reset: Removing default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Layout Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--color-white);
+  border-bottom: 3px solid var(--color-primary);
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo h1 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+/* Navigation Styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Main Content Area */
+main {
+  padding: 40px 0;
+  flex: 1; /* Pushes footer to bottom */
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+h3 {
+  color: var(--color-text);
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* Button Styles */
+.primary-button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: #165c3a; /* Darker green */
+}
+
+/* Hero Section (Home Page) */
+.hero-section {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #e8f5e9; /* Light green tint */
+  border-radius: 10px;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* Card Grids */
+.card-grid,
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Card Styles */
+.card,
+.leader-card {
+  background-color: var(--color-white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--color-secondary);
+}
+
+.leader-card .role {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.leader-card .detail {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.member-list {
+  list-style-position: inside;
+}
+
+/* Program Section Styles */
+.program-section {
+  background-color: var(--color-white);
+  padding: 30px;
+  border-radius: 8px;
+  border-left: 5px solid var(--color-primary);
+}
+
+.program-list {
+  margin-left: 20px;
+}
+
+.program-list li {
+  margin-bottom: 10px;
+}
+
+/* Contact Page Styles */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: 30px 0;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+/* Responsive Design (Mobile) */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}

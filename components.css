@@ -1,0 +1,321 @@
+/*
+  COMPONENTS.CSS
+  Buttons, Cards, Navbar, Footer
+*/
+
+/* Buttons */
+/* 
+  BUTTONS
+  - 'display: inline-block' allows us to set padding and margin on links
+  - 'border-radius: 50px' creates the pill shape
+  - 'transition' makes the hover effect smooth
+*/
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ccc; /* Darker border for visibility */
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  background: #fff; /* White background for inputs */
+  color: var(--text-dark);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-green);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(31, 122, 77, 0.1);
+  background: #fff;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(31, 122, 77, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(31, 122, 77, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--warm-gold);
+  color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  border-bottom: 4px solid transparent;
+  height: 100%; /* Equal height */
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--warm-gold);
+}
+
+.card h3 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: var(--spacing-md) 0;
+  transition: all var(--transition-fast);
+  background-color: transparent; /* Transparent initially */
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-sm) 0;
+}
+
+.logo h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--white); /* White on hero */
+}
+
+header.scrolled .logo h1 {
+  color: var(--primary-green);
+}
+
+nav ul {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+nav a {
+  font-weight: 500;
+  color: var(--white);
+  position: relative;
+}
+
+header.scrolled nav a {
+  color: var(--text-dark);
+  text-shadow: none;
+}
+
+nav a {
+  font-weight: 500;
+  color: var(--white);
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Better contrast on hero */
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--warm-gold);
+  transition: width var(--transition-fast);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  transition: var(--transition-fast);
+}
+
+header.scrolled .bar {
+  background-color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: var(--spacing-xl) 0;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
+  margin-top: var(--spacing-xl);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-col h3 {
+  color: var(--warm-gold);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.2rem;
+}
+
+.footer-col p,
+.footer-col li {
+  color: rgba(255, 255, 255, 0.9); /* High contrast text */
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.9);
+  transition: color var(--transition-fast);
+}
+
+.footer-col a:hover {
+  color: var(--warm-gold);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* 
+    MOBILE MENU
+    - 'position: fixed' keeps it on screen even when scrolling
+    - 'right: -100%' hides it off-screen to the right initially
+    - 'z-index: 999' ensures it sits on top of everything else
+  */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%; /* Not full width, to show backdrop */
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--primary-green); /* Green background */
+    padding: var(--spacing-xl);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    border-top-left-radius: 50% 10%; /* Curved edge */
+    border-bottom-left-radius: 50% 10%;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+  }
+
+  nav a {
+    color: var(--white); /* White text on green */
+    font-size: 1.5rem;
+    text-shadow: none;
+    opacity: 0; /* Hidden initially for animation */
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+  }
+
+  nav.active a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Staggered animation for links */
+  nav.active li:nth-child(1) a {
+    transition-delay: 0.1s;
+  }
+  nav.active li:nth-child(2) a {
+    transition-delay: 0.2s;
+  }
+  nav.active li:nth-child(3) a {
+    transition-delay: 0.3s;
+  }
+  nav.active li:nth-child(4) a {
+    transition-delay: 0.4s;
+  }
+
+  header .logo h1 {
+    font-size: 1.5rem;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .menu-toggle {
+    z-index: 1001;
+    position: relative;
+  }
+
+  /* Bars turn white when menu is open (on green bg) */
+  .menu-toggle.open .bar {
+    background-color: var(--white);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--spacing-md);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stack footer columns on very small screens */
+  }
+}

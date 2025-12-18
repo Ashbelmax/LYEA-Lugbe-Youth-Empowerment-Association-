@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Lugbe Youth Empowerment Association</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./layout.css" />
+    <link rel="stylesheet" href="./components.css" />
+    <link rel="stylesheet" href="./animations.css" />
+    <script src="./main.js" defer></script>
+    <link rel="icon" href="./logo.png">
+  </head>
+  <body>
+        <!-- 
+      HEADER SECTION 
+      Contains the logo and the main navigation menu.
+    -->
+    <header>
+      <div class="container">
+        <div class="flex-between">
+          <div class="logo">
+             <img style="width: 50px;"
+            src="./logo.png" alt="logo">
+            <h1>LYEA</h1>
+          </div>
+          <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Page Hero -->
+      <section class="page-hero">
+        <div class="container hero-animate">
+          <h2>Contact Us</h2>
+          <p>We'd love to hear from you.</p>
+        </div>
+        <div class="curve-bottom">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="container">
+          <h2 class="reveal">Get in Touch</h2>
+          <p class="reveal delay-100">
+            Whether you want to join, support us, or just learn more, reach out!
+          </p>
+
+          <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="form-container">
+              <form id="contactForm" class="reveal delay-100">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="name">Name</label>
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="email">Email</label>
+                </div>
+
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder=" "
+                    required
+                  ></textarea>
+                  <label for="message">Message</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="contact-info">
+              <h3>Visit Us</h3>
+              <p><strong>Location:</strong> Lugbe, Abuja, Nigeria</p>
+              <p>
+                Come visit us and see our work in action. We are always looking
+                for new partners and volunteers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <img style="width: 50px;"
+     src="./logo.png" alt="logo">
+            <h3>LYEA</h3>
+            <p>
+              Empowering the youth and women of Lugbe for a brighter,
+              sustainable future.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Our Programs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Lugbe, Abuja, Nigeria</p>
+             <p><a href="mailto:lyea1999@gmail.com">lyea1999@gmail.com</a></p>
+            <p><a href="https://wa.me/2348052078536">+234 805 207 8536</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Lugbe Youth Empowerment Association. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

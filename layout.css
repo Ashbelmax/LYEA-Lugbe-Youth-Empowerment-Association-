@@ -1,0 +1,150 @@
+/*
+  LAYOUT.CSS
+  Grid, Flexbox, Containers, and Sections
+*/
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Sections */
+section {
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+/* Hero Sections */
+.hero-section,
+.page-hero {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--primary-green-dark) 100%
+  );
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section {
+  min-height: 80vh;
+}
+
+.page-hero {
+  min-height: 40vh;
+  padding-top: 80px; /* Account for fixed header */
+}
+
+.hero-section h2,
+.page-hero h2 {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p,
+.page-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+@media (max-width: 480px) {
+  .hero-section h2,
+  .page-hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero-section p,
+  .page-hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Section Separators (Curves) */
+.curve-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.curve-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(138% + 1.3px);
+  height: 80px;
+}
+
+.curve-bottom .shape-fill {
+  fill: var(--soft-white);
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* 
+  RESPONSIVE GRID
+  We use 'min-width' media queries to apply styles ONLY when the screen is wide enough.
+  This is a "Mobile First" approach.
+*/
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 0 var(--spacing-sm);
+  }
+
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
+/* Flex Utilities */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
